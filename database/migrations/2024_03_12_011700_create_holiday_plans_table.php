@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('holiday_plans', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 30);
+            $table->string('description',300);
+            $table->date('date');
+            $table->string('location', 50);
+            $table->foreignId('participant_id')
+                ->constrained('participants')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
             $table->timestamps();
         });
     }
