@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class HolidayPlan extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function participants(){
+        return $this->hasMany(Participant::class);
+    }
 }
