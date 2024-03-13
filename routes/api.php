@@ -11,6 +11,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/validate-token', [AuthController::class, 'validateToken']);
 
+    Route::post('/holidayplans', [HolidayPlanController::class, 'store']);
     Route::get('/holidayplans', [HolidayPlanController::class, 'index']);
-    Route::get('/getbyid', [HolidayPlanController::class, 'get']);
+    Route::get('/participants', [HolidayPlanController::class, 'get']);
 });

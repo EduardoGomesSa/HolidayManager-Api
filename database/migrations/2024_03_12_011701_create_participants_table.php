@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
             $table->string('name', 30);
+            $table->foreignId('holiday_plan_id')
+                ->constrained('holiday_plans')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
             $table->timestamps();
         });
     }

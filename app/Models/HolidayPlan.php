@@ -9,7 +9,14 @@ class HolidayPlan extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    // protected $fillable = [
+    //     'title',
+    //     'description',
+    //     'date',
+    //     'location',
+    //     'participants'
+    // ];
+    protected $guarded = ['participants'];
 
     public function participants(){
         return $this->hasMany(Participant::class);

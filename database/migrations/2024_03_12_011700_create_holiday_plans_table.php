@@ -17,10 +17,6 @@ return new class extends Migration
             $table->string('description',300);
             $table->date('date');
             $table->string('location', 50);
-            $table->foreignId('participant_id')
-                ->constrained('participants')
-                ->onUpdate('CASCADE')
-                ->onDelete('CASCADE');
             $table->timestamps();
         });
     }
